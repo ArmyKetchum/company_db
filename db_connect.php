@@ -3,11 +3,10 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $database = "company_db";
+
 $conn = new mysqli($servername, $username, $password);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-} else {
-    echo "Connected successfully<br>";
 }
 
 $conn->query("CREATE DATABASE IF NOT EXISTS $database");
@@ -26,5 +25,4 @@ $conn->query("CREATE TABLE IF NOT EXISTS Employees (
     department_id INT NOT NULL,
     FOREIGN KEY (department_id) REFERENCES Departments(id) ON DELETE CASCADE
 )");
-
 ?>

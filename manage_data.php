@@ -64,3 +64,4 @@ $departments = $conn->query("SELECT * FROM Departments");
     </form>
 </body>
 </html>
+<?php $conn->close(); ?>
