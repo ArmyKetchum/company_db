@@ -19,26 +19,33 @@ $departments = $conn->query("SELECT * FROM Departments");
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Manage Data</title>
     <style>
         body {
             padding: 20px;
         }
+
         form {
             margin-bottom: 20px;
         }
-        input, select, button {
+
+        input,
+        select,
+        button {
             margin: 5px 0;
             padding: 8px;
             width: 100%;
             max-width: 300px;
         }
+
         button {
             width: auto;
         }
     </style>
 </head>
+
 <body>
     <h2>Add Department</h2>
     <form method="post">
@@ -63,5 +70,7 @@ $departments = $conn->query("SELECT * FROM Departments");
         <button type="reset">Reset</button><br>
     </form>
 </body>
+
 </html>
-<?php $conn->close(); ?>
+<?php $conn->close(); 
+?>
