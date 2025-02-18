@@ -47,7 +47,7 @@ $departments = $conn->query("SELECT * FROM Departments");
                 <td><?= $row['department_name'] ?></td>
                 <td>
                     <!-- Update Form -->
-                    <form method="post" style="display:inline;">
+                    <form method="post" action="update_employee.php" style="display:inline;">
                         <input type="hidden" name="id" value="<?= $row['id'] ?>">
                         <input type="hidden" name="name" value="<?= $row['name'] ?>">
                         <input type="hidden" name="age" value="<?= $row['age'] ?>">
@@ -56,7 +56,7 @@ $departments = $conn->query("SELECT * FROM Departments");
                         <button type="submit" name="update_employee">Update</button>
                     </form>
                     <!-- Delete Form -->
-                    <form method="post" style="display:inline;">
+                    <form method="post" action="delete_employee.php" style="display:inline;">
                         <input type="hidden" name="id" value="<?= $row['id'] ?>">
                         <button type="submit" name="delete_employee">Delete</button>
                     </form>
