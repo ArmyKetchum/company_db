@@ -14,7 +14,7 @@ $conn->select_db($database);
 
 $conn->query("CREATE TABLE IF NOT EXISTS Departments (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    department_name VARCHAR(50) NOT NULL
+    department_name VARCHAR(50) NOT NULL UNIQUE
 )");
 
 $conn->query("CREATE TABLE IF NOT EXISTS Employees (
