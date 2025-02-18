@@ -40,28 +40,27 @@ $departments = $conn->query("SELECT * FROM Departments");
         </tr>
         <?php while ($row = $employees->fetch_assoc()) { ?>
             <tr>
-                <form method="post">
-                    <td><?= $row['id'] ?></td>
-                    <td><input type="text" name="name" value="<?= $row['name'] ?>"></td>
-                    <td><input type="number" name="age" value="<?= $row['age'] ?>"></td>
-                    <td><input type="email" name="email" value="<?= $row['email'] ?>"></td>
-                    <td>
-                        <select name="department_id">
-                            <?php
-                            $departments->data_seek(0); // Reset the pointer to the beginning
-                            while ($dept = $departments->fetch_assoc()) { ?>
-                                <option value="<?= $dept['id'] ?>" <?= $dept['id'] == $row['department_id'] ? 'selected' : '' ?>>
-                                    <?= $dept['department_name'] ?>
-                                </option>
-                            <?php } ?>
-                        </select>
-                    </td>
-                    <td>
+                <td><?= $row['id'] ?></td>
+                <td><?= $row['name'] ?></td>
+                <td><?= $row['age'] ?></td>
+                <td><?= $row['email'] ?></td>
+                <td><?= $row['department_name'] ?></td>
+                <td>
+                    <!-- Update Form -->
+                    <form method="post" style="display:inline;">
                         <input type="hidden" name="id" value="<?= $row['id'] ?>">
+                        <input type="hidden" name="name" value="<?= $row['name'] ?>">
+                        <input type="hidden" name="age" value="<?= $row['age'] ?>">
+                        <input type="hidden" name="email" value="<?= $row['email'] ?>">
+                        <input type="hidden" name="department_id" value="<?= $row['department_id'] ?>">
                         <button type="submit" name="update_employee">Update</button>
+                    </form>
+                    <!-- Delete Form -->
+                    <form method="post" style="display:inline;">
+                        <input type="hidden" name="id" value="<?= $row['id'] ?>">
                         <button type="submit" name="delete_employee">Delete</button>
-                    </td>
-                </form>
+                    </form>
+                </td>
             </tr>
         <?php } ?>
     </table>
