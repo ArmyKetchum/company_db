@@ -61,7 +61,7 @@ $departments = $conn->query("SELECT * FROM Departments");
                     <td>
                         <select name="department_id">
                             <?php
-                            $departments->data_seek(0); // Reset the pointer to the beginning
+                            $departments->data_seek(0);
                             while ($dept = $departments->fetch_assoc()) { ?>
                                 <option value="<?= $dept['id'] ?>" <?= $dept['id'] == $row['department_id'] ? 'selected' : '' ?>>
                                     <?= $dept['department_name'] ?>
