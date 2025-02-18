@@ -11,7 +11,7 @@ if (isset($_POST["add_employee"])) {
     $age = $_POST["age"];
     $email = $_POST["email"];
     $department_id = $_POST["department_id"];
-    $conn->query("INSERT INTO Employees (name, age, email, department_id) VALUES ('$name', $age, '$email', $department_id')");
+    $conn->query("INSERT INTO Employees (name, age, email, department_id) VALUES ('$name', $age, '$email', $department_id)");
 }
 
 $departments = $conn->query("SELECT * FROM Departments");
